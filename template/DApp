@@ -1,0 +1,56 @@
+<h2>Ethereum DApp</h2>
+<input type="number" id="moneyInput" placeholder="Enter amount to store">
+<button class="btn" onclick="storeValue()">Store Value</button>
+<button class="btn" onclick="getValue()">Get Stored Value</button>
+<p id="storedValue"></p>
+<p id="status"></p>
+
+<script src=" https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+<script>
+    const contractAddress = '0x17d80b68632262124ef7bf24c0a729e5cfaf49ce'
+    const contractABI = [
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "num",
+                    "type": "uint256"
+                }
+            ],
+            "name": "store_m",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "view_money",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ]
+
+    const web3 = new Web3(Web3.givenProvider); // to let the ethereum connected
+    const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+    async function storeValue() {
+        const accounts = await web3.eth.requestAccounts();
+        const value = document.getElementById('moneyInput').value;
+        console.log("value: " + value);
+        console.log("accounts[0] " + accounts[0]);
+        await contract.methods.store_m(value).send({from: accounts[0]});
+    }
+
+    async function getValue() {
+        const storedValue = await contract.methods.view_m().call();
+        console.log("stored value " + storedValue);
+        document.getElementById('storedValue').innerText = "Stored Value: " + storedValue;
+    }
+</script>
