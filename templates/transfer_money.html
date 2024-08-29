@@ -77,11 +77,25 @@
     console.log(contract)
 
     async function transfer(){
+        const accounts = await web3.eth.requestAccounts()
+        console.log(accounts)
+        const payer_address = document.getElementById("payer_id").value
+        const payee_address = document.getElementById("payee_id").value
+        const amount = document.getElementById("amount_id").value
+        console.log(amount,payer_address, payee_address)
 
+        await contract.methods.weixin(amount, payer_address, payee_address).send({from:accounts[0]})
     }
 
     async function view_transaction(){
-        
+        const result = await contract.methods.check_transaction().call()
+        const payer_address = result[0]
+        const payee_address = result[1]
+        const amount = result[2]
+
+        document.getElementById("view_payer_id").innerText = "Payer Address: " + payee_address
+        document.getElementById("view_payee_id").innerText = "Payee Address: " + payee_address
+        document.getElementById("view_amount_id").innerText = "Amount: " + amount
     }
 
     
