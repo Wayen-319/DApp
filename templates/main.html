@@ -98,14 +98,16 @@
 </head>
 <body>
     <div class="container">
-        <h2>Welcome to DApp - Store and Transfer Money. </h2>
-        <h2>May I know your name?</h2>
+        <h2>Main menu</h2>
+        <h2>Hi, {{r}}, how can I help you today?</h2>
         <br>
-        <form action="/main" method="post">
-            <input type="text" value="q">
-            <input type="submit" value="Enter">
+        <form action="/store_money" method="post">
+            <input type="submit" value="Store Money">
         </form> 
         <br>
+        <form action="/transfer_money" method="post">
+            <input type="submit" value="Transfer Money">
+        </form>
     </div>
 </body>
 <html>
