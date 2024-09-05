@@ -98,24 +98,21 @@
 </head>
 <body>
     <div class="container">
-        <h2>Main menu</h2>
-        <h2>Hi, {{r}}, how can I help you today?</h2>
+        <h2>Welcome to DApp - Store and Transfer Money. </h2>
+        <h2>Admin</h2>
         <br>
-        <form action="/store_money" method="post">
-            <input type="submit" value="Store Money">
+        <form action="/viewDB" method="post">
+            <input type="submit" value="view Database">
         </form> 
         <br>
-        <form action="/transfer_money" method="post">
-            <input type="submit" value="Transfer Money">
-        </form>
+        <form action="/delDB" method="post">
+            <input type="submit" value="delete Database">
+        </form> 
         <br>
-        <form action="/admin" method="post">
-            <input type="submit" value="admin">
-        </form>
+        <form action="/main" method="post">
+            <input type="submit" value="Main">
+        </form> 
         <br>
-        <form action="/" method="post">
-            <input type="submit" value="Logout">
-        </form>
     </div>
 </body>
 <html>

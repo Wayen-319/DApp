@@ -98,24 +98,13 @@
 </head>
 <body>
     <div class="container">
-        <h2>Main menu</h2>
-        <h2>Hi, {{r}}, how can I help you today?</h2>
+        <h2>User Data</h2>
+        {{r}}
         <br>
-        <form action="/store_money" method="post">
-            <input type="submit" value="Store Money">
+        <form action="/main" method="post">
+            <input type="submit" value="Main">
         </form> 
         <br>
-        <form action="/transfer_money" method="post">
-            <input type="submit" value="Transfer Money">
-        </form>
-        <br>
-        <form action="/admin" method="post">
-            <input type="submit" value="admin">
-        </form>
-        <br>
-        <form action="/" method="post">
-            <input type="submit" value="Logout">
-        </form>
     </div>
 </body>
 <html>
