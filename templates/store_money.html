@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethereum DApp 5</title>
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -32,6 +33,23 @@
             color: #333;
         }
 
+        form {
+            margin: 15px 0;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+
         input, button {
             width: 100%;
             padding: 10px;
@@ -51,6 +69,7 @@
         button:hover {
             background-color: #0056b3;
         }
+
 
         p {
             margin-top: 20px;
@@ -87,7 +106,6 @@
         <p id="storedValue"></p>
         <p id="status"></p>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
     <script>
         const contractAddress = '0x9d63fd56fab58f414fd3a4b27ae0e099091ba89d'; // Replace with your contract address
@@ -138,4 +156,5 @@
         }
     </script>
 </body>
-</html>
+<html>
+    
